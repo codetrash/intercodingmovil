@@ -2,16 +2,19 @@
 <ion-header>
 
   <ion-navbar color = "primary">
-    <ion-title>concursantes-lista</ion-title>
+    <ion-title>Concursantes</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content>
+  <h1 padding-left>{{categoria}}</h1>
 <ion-list>
-<button ion-item (click)="atras()"><ion-icon name="return-left" item-left></ion-icon>Atras</button>
+
 
 <button ion-item (click)="goToDetalle(c)" *ngFor="let c of concursantes ">
-  <ion-icon name="cloudy" item-left></ion-icon> {{c.nombre}}</button>
+  <ion-icon name="person" item-left></ion-icon>
+  <ion-label class="nombre">{{c.nombre}}</ion-label> 
+  </button>
 </ion-list>
 
 </ion-content>

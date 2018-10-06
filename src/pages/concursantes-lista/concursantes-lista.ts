@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Concursantes } from '../../models/concursantes';
+import { ConcursantesService } from '../service/concursantes.service';
 
 
 
@@ -11,36 +12,20 @@ import { Concursantes } from '../../models/concursantes';
 })
 export class ConcursantesListaPage {
 
-  concursantes : any[];
+  concursantes : any[] = [];
+  categoria : string ="";
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public concursantesService: ConcursantesService ) {
 
-    this.concursantes=[
-      {
-      cod_concursante: 1,
-      nombre: 'parapencio pericarpio'
-      },
+                this.concursantes = this.concursantesService.getAll();
+                this.categoria=this.navParams.data.categoria;
 
-      {
-        cod_concursante: 2,
-        nombre: 'malercia malindra'
-        },
-
-        {
-          cod_concursante: 3,
-          nombre: 'plutarco pasterindo'
-          },
-    ]
-
-    
-  
-  }
+   }
 
   
-
-
-
   atras(){
     this.navCtrl.setRoot('HomePage');
 
