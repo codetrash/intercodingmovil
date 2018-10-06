@@ -10,5 +10,8 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  goToConcursantes(){
+    console.log("Ir a concursante");
+    this.navCtrl.setRoot('ConcursantesListaPage');
+  }
 }
