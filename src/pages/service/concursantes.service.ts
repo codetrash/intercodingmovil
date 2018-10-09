@@ -24,7 +24,11 @@ export class ConcursantesService {
           ]
     }
     
-    getAll(){
+    getAll() {
+    return this.http.get('http://192.168.1.161:3000/concursantes/all');
+    }
+
+    getAllMock(){
        return this.concursantes
     }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Concursantes } from '../../models/concursantes';
+import { HomePage } from '../home/home';
 
  
 @IonicPage()
@@ -15,6 +16,9 @@ export class ConcursantesDetallePage {
             public navParams: NavParams,
             public alert : AlertController) {
     this.concursantes=this.navParams.data.concursantes;
+    if (!this.concursantes){
+      this.navCtrl.setRoot(HomePage);
+    }
   }
 
   ionViewDidLoad() {

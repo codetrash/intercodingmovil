@@ -11,9 +11,12 @@
 <ion-list>
 
 
-<button ion-item (click)="goToDetalle(c)" *ngFor="let c of concursantes ">
+<button ion-item no-lines (click)="openAlert(c)" *ngFor="let c of concursantes ">
   <ion-icon name="person" item-left></ion-icon>
-  <ion-label class="nombre">{{c.nombre}}</ion-label> 
+  <ion-icon name="time" item-right color ="primary"></ion-icon>
+  <ion-label class="nombre">{{c.nombre}} {{c.apellido}} </ion-label> 
+
+
   </button>
 </ion-list>
 

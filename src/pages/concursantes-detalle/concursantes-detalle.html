@@ -8,9 +8,12 @@
 </ion-header>
 
 
-<ion-content padding>
-    <h3>{{ concursantes.nombre }}</h3>
-    <button ion-button color = "secondary" full (click)="abrirAlerta()">Alarma</button>
+<ion-content padding *ngIf = "concursantes">
+    <h3>{{ concursantes.nombre }} {{ concursantes.apellido }}</h3> 
+    <p><strong>Usuario:</strong>{{concursantes.usuario}}</p>
+    <p><strong>Ejercicio:</strong> {{ concursantes.titulo }}</p> 
+    <p></p>
+    <button ion-button color = "secondary" full (click)="abrirAlerta()">Corregir</button>
     
 
 </ion-content>
